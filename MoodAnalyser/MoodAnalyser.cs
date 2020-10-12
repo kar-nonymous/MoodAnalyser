@@ -10,6 +10,11 @@ namespace MoodAnalyser
         public MoodAnalyserClass(string message)
         {
             this.message = message;
+            Console.WriteLine("Parametarised constructor");
+        }
+        public MoodAnalyserClass()
+        {
+            Console.WriteLine("Default Constructor");
         }
         public string AnalyseMood()
         {
