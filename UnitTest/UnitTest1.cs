@@ -28,5 +28,16 @@ namespace MSTestMoodAnalyser
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void GivenNullShouldReturnHappy()
+        {
+            //Arrange
+            MoodAnalyserClass moodAnalyserClass = new MoodAnalyserClass(null);
+            string expected = "Happy Mood";
+            //Act
+            string actual = moodAnalyserClass.AnalyseMood();
+            //Assert
+            Assert.AreEqual(expected, actual)
+        }
     }
 }
