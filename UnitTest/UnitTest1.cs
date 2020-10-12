@@ -37,7 +37,34 @@ namespace MSTestMoodAnalyser
             //Act
             string actual = moodAnalyserClass.AnalyseMood();
             //Assert
-            Assert.AreEqual(expected, actual)
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void GivenNullShouldGiveCustomException()
+        {
+            try
+            {
+                //Arrange
+                MoodAnalyserClass moodAnalyserClass = new MoodAnalyserClass(null);
+                //Act
+                string actual = moodAnalyserClass.AnalyseMood();
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                //Assert
+                Assert.AreEqual("Mood should not be null", exception.Message);
+            }
+        }
+        [TestMethod]
+        public void GivenEmptyShouldGiveCustomException()
+        {
+            //Arrange
+            MoodAnalyserClass moodAnalyserClass = new MoodAnalyserClass(" ");
+            string expected = "Mood should not be empty";
+            //Act
+            string actual = moodAnalyserClass.AnalyseMood();
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
     }
 }
