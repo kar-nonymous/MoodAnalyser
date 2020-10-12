@@ -10,13 +10,25 @@ namespace MoodAnalyser
         public MoodAnalyserClass(string message)
         {
             this.message = message;
+            Console.WriteLine("Parametarised constructor");
+        }
+        public MoodAnalyserClass()
+        {
+            Console.WriteLine("Default Constructor");
         }
         public string AnalyseMood()
         {
-            if (message.ToUpper().Contains("SAD"))
-                return "Sad Mood";
-            else
-                return "Happy Mood";
+            try
+            {
+                if (message.ToUpper().Contains("SAD"))
+                    return "Sad Mood";
+                else
+                    return "Happy Mood";
+            }
+            catch (NullReferenceException)
+            {
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "Mood should not be null");
+            }
         }
     }
 }
