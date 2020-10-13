@@ -90,5 +90,18 @@ namespace MSTestMoodAnalyser
                 Assert.AreEqual("class not found", exception.Message);
             }
         }
+        [TestMethod]
+        public void GivenHappyMessageWhenInvokeMethodShouldReturnMoodAnalysisException()
+        {
+            try
+            {
+                //Act
+                object result = MoodAnalyserFactory.InvokeAnalyserMethod("Happy", "WrongMethod");
+            }
+            catch(MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual("Method not found", exception.Message);
+            }
+        }
     }
 }
