@@ -1,0 +1,13 @@
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\obj\Debug\netcoreapp3.1\MoodAnalyser.csprojAssemblyReference.cache
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\obj\Debug\netcoreapp3.1\MoodAnalyser.AssemblyInfoInputs.cache
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\obj\Debug\netcoreapp3.1\MoodAnalyser.AssemblyInfo.cs
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\obj\Debug\netcoreapp3.1\MoodAnalyser.csproj.CoreCompileInputs.cache
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\bin\Debug\netcoreapp3.1\MoodAnalyser.exe
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\bin\Debug\netcoreapp3.1\MoodAnalyser.deps.json
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\bin\Debug\netcoreapp3.1\MoodAnalyser.runtimeconfig.json
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\bin\Debug\netcoreapp3.1\MoodAnalyser.runtimeconfig.dev.json
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\bin\Debug\netcoreapp3.1\MoodAnalyser.dll
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\bin\Debug\netcoreapp3.1\MoodAnalyser.pdb
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\obj\Debug\netcoreapp3.1\MoodAnalyser.dll
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\obj\Debug\netcoreapp3.1\MoodAnalyser.pdb
+C:\Users\Kartikeya\source\repos\MoodAnalyser\MoodAnalyser\obj\Debug\netcoreapp3.1\MoodAnalyser.genruntimeconfig.cache

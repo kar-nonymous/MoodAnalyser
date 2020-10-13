@@ -11,6 +11,7 @@ namespace MoodAnalyser
             string mood = Console.ReadLine();
             MoodAnalyserClass moodAnalyserClass = new MoodAnalyserClass(mood);
             Console.WriteLine("Your current mood: " + moodAnalyserClass.AnalyseMood());
+           // MoodAnalyserFactory.CreateMoodAnalyserParameterisedObject("","")
         }
     }
 }

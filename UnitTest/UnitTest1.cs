@@ -67,12 +67,12 @@ namespace MSTestMoodAnalyser
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void GivenMoodAnalyserClassNameShouldReturnMoodAnalyserObeject()
+        public void GivenMoodAnalyserClassNameShouldReturnMoodAnalyserObject()
         {
             //Arrange
             var expected = new MoodAnalyserClass();
             //Act
-            object result = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyser.MoodAnalyserClass", "MoodAnalyser");
+            object result = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyser.MoodAnalyserClass", "MoodAnalyserClass");
             //Assert
             expected.Equals(result);
         }
@@ -82,26 +82,12 @@ namespace MSTestMoodAnalyser
             try
             {
                 //Act
-                object result = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyserDifferent.MoodAnalyserClass", "MoodAnalyser");
+                object result = MoodAnalyserFactory.CreateMoodAnalyserParameterisedObject("MoodAnalyser.MoodAnalyserClass", "MoodAnalyserClass", "I'm happy");
             }
             catch (MoodAnalyserCustomException exception)
             {
                 //Assert
                 Assert.AreEqual("class not found", exception.Message);
-            }
-        }
-        [TestMethod]
-        public void GivenImproperConstructorShouldThrowMoodAnalysisException()
-        {
-            try
-            {
-                //Act
-                object result = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyser.MoodAnalyserClass", "MoodAnalyserDifferent");
-            }
-            catch (MoodAnalyserCustomException exception)
-            {
-                //Assert
-                Assert.AreEqual("constructor not found in the class", exception.Message);
             }
         }
     }
