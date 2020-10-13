@@ -67,12 +67,12 @@ namespace MSTestMoodAnalyser
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void GivenMoodAnalyserClassNameShouldReturnMoodAnalyserObeject()
+        public void GivenMoodAnalyserClassNameShouldReturnMoodAnalyserObject()
         {
             //Arrange
             var expected = new MoodAnalyserClass();
             //Act
-            object result = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyser.MoodAnalyserClass", "MoodAnalyser");
+            object result = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyser.MoodAnalyserClass", "MoodAnalyserClass");
             //Assert
             expected.Equals(result);
         }
@@ -82,7 +82,7 @@ namespace MSTestMoodAnalyser
             try
             {
                 //Act
-                object result = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyserDifferent.MoodAnalyserClass", "MoodAnalyser");
+                object result = MoodAnalyserFactory.CreateMoodAnalyserParameterisedObject("MoodAnalyser.MoodAnalyserClass", "MoodAnalyserClass", "I'm happy");
             }
             catch (MoodAnalyserCustomException exception)
             {
@@ -91,18 +91,44 @@ namespace MSTestMoodAnalyser
             }
         }
         [TestMethod]
-        public void GivenImproperConstructorShouldThrowMoodAnalysisException()
+        public void GivenHappyMessageWhenInvokeMethodShouldReturnMoodAnalysisException()
         {
             try
             {
                 //Act
-                object result = MoodAnalyserFactory.CreateMoodAnalyserObject("MoodAnalyser.MoodAnalyserClass", "MoodAnalyserDifferent");
+                object result = MoodAnalyserFactory.InvokeAnalyserMethod("Happy", "WrongMethod");
             }
-            catch (MoodAnalyserCustomException exception)
+            catch(MoodAnalyserCustomException exception)
             {
-                //Assert
-                Assert.AreEqual("constructor not found in the class", exception.Message);
+                Assert.AreEqual("Method not found", exception.Message);
             }
         }
+        //7.1
+        [TestMethod]
+        public void GivenHappyMessageUsingReflectorShouldReturnHappy()
+        {
+            //Arrange
+            string expected = "HAPPY";
+            //Act
+            string actual = MoodAnalyserFactory.SetField("HAPPY", "message");
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        //7.2
+        [TestMethod]
+        public void SetFieldImproperWhenShouldThrowException()
+        {
+            try
+            {
+                //Act
+                object result = MoodAnalyserFactory.SetField("HAPPY", "message");
+            }
+            catch(MoodAnalyserCustomException exception)
+            {
+                //Assert
+                Assert.AreEqual("Field not found", exception.Message);
+            }
+        }
+
     }
 }
